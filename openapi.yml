@@ -24,10 +24,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                book:
-                  $ref: '#/components/schemas/BookProperties'
+              $ref: '#/components/schemas/Book'
       responses:
         '200':
           description: 作成された書籍
