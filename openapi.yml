@@ -34,8 +34,20 @@ paths:
                 $ref: '#/components/schemas/Book'
 components:
   schemas:
+    ResourceId:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          type: integer
+          example: 1234
+      discriminator:
+        propertyName: id
     BookProperties:
-      $ref: './components/book_properties.yml'
+      allOf:
+      - $ref: '#/components/schemas/ResourceId'
+      - $ref: './components/book_properties.yml'
     Book:
       type: object
       properties:
