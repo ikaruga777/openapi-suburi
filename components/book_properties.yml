@@ -1,0 +1,11 @@
+type: object
+required:
+- name
+- author
+properties:
+  name:
+    type: string
+    example: "The Raging Tide: Or, the Black Doll's Imbroglio"
+  author:
+    type: string
+    example: Edward Gorey

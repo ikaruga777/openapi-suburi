@@ -1,0 +1,31 @@
+get:
+  operationId: getBooks
+  responses:
+    '200':
+      description: 書籍一覧
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../openapi.yml#/components/schemas/BookProperties'
+post:
+  operationId: createBook
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            book:
+              $ref: '../openapi.yml#/components/schemas/BookProperties'
+  responses:
+    '200':
+      description: 作成された書籍
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../openapi.yml#/components/schemas/Book'

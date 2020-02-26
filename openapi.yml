@@ -19,6 +19,15 @@ paths:
                   $ref: '#/components/schemas/BookProperties'
     post:
       operationId: createBook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book:
+                  $ref: '#/components/schemas/BookProperties'
       responses:
         '200':
           description: 作成された書籍
@@ -31,17 +40,7 @@ paths:
 components:
   schemas:
     BookProperties:
-      type: object
-      required:
-      - name
-      - author
-      properties:
-        name:
-          type: string
-          example: "The Raging Tide: Or, the Black Doll's Imbroglio"
-        author:
-          type: string
-          example: Edward Gorey
+      $ref: './components/book_properties.yml'
     Book:
       type: object
       properties:
